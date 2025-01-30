@@ -1,0 +1,4 @@
+export const SCREEN_TYPES = {
+  MIN_DESKTOP: 1280,
+  MIN_TABLET: 768,
+};
