@@ -11,4 +11,4 @@
 
 Для запуска: npm run dev
 
-Проект задеплоен в Vercel и доступен по [ссылке](slider-task-tan.vercel.app)
+Проект задеплоен в Vercel и доступен по [ссылке](https://slider-task-tan.vercel.app)
