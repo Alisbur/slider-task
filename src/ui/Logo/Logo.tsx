@@ -1,21 +1,20 @@
 import { ReactElement } from "react";
-import { COMPANY_DETAILS } from "@/shared/constants/company";
 import Link from "next/link";
 
 type TLogoProps = {
   name: string;
   logo: ReactElement;
-  web: string;
-  variant: "logo" | "both";
+  href: string;
+  title?: string;
 };
 
-export default function Logo({ name, logo, variant, web }: TLogoProps) {
+export default function Logo({ name, logo, href, title }: TLogoProps) {
   return (
-    <Link href={web} className="flex items-center gap-4 link">
+    <Link href={href} className="flex items-center gap-4 link" title={title}>
       <div className="h-[28px] p-[7px] rounded-[4px] bg-[#121212] text-[white] flex items-center justify-center">
         {logo}
       </div>
-      {variant === "both" && COMPANY_DETAILS.name}
+      <span className="hidden lg:inline-block">{name}</span>
     </Link>
   );
 }

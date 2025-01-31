@@ -8,11 +8,11 @@ type TNavProps = {
   navItems: TMenuItem[];
 } & HTMLAttributes<HTMLDivElement>;
 
-export default function Nav({ navItems, className, ...rest }: TNavProps) {
+export default function Nav({ navItems, className }: TNavProps) {
   return (
     <nav className={`flex align-center gap-6 ${className}`}>
-      {navItems.map((l, i) => (
-        <Link key={l.id} href={l.path} className="link">
+      {navItems.map((l) => (
+        <Link key={l.id} href={l.href} className="link" title={l.text} >
           {l.text}
         </Link>
       ))}

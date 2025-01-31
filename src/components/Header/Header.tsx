@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-import { useDeviceContext } from "@/shared/hooks/useDeviceContext";
 import { MENU_ITEMS } from "@/shared/constants/menuItems";
 import Nav from "../../ui/Nav/Nav";
 import Button from "@/ui/Button/Button";
@@ -11,10 +9,8 @@ import { COMPANY_DETAILS } from "@/shared/constants/company";
 import AccountLink from "@/ui/AccountLink/AccountLink";
 
 export default function Header() {
-  const { device } = useDeviceContext();
-
   const onClickHandler = () => {
-    console.log("Button ");
+    alert("Button pressed");
   };
 
   return (
@@ -23,18 +19,23 @@ export default function Header() {
         <Logo
           logo={<Icon glyph="logo" />}
           name={COMPANY_DETAILS.name}
-          web={COMPANY_DETAILS.web}
-          variant={device !== "desktop" ? "logo" : "both"}
+          href={COMPANY_DETAILS.web}
+          title="Логотип компании"
         />
-        {device === "desktop" && (
-          <Nav navItems={MENU_ITEMS} className="ml-[320px]" />
-        )}
+        <Nav
+          navItems={MENU_ITEMS}
+          className="hidden ml-[320px] lg:flex"
+        />
       </div>
-      {device === "desktop" ? (
-        <AccountLink />
-      ) : (
-        <Button onClick={() => onClickHandler()}>Меню</Button>
-      )}
+      <AccountLink href="/" className="hidden lg:flex" />
+      <Button
+        type="button"
+        title="Меню"
+        className="lg:hidden"
+        onClick={() => onClickHandler()}
+      >
+        Меню
+      </Button>
     </header>
   );
 }

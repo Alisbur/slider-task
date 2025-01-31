@@ -4,16 +4,16 @@ export const MENU_ITEMS: TMenuItem[] = [
   {
     id: 1,
     text: "О школе",
-    path: "/",
+    href: "/",
   },
   {
     id: 2,
     text: "Курсы",
-    path: "/",
+    href: "/",
   },
   {
     id: 3,
     text: "Библиотека",
-    path: "/",
+    href: "/",
   },
 ];

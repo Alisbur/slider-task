@@ -1,9 +1,17 @@
-import Link from "next/link";
+import Link, { LinkProps } from "next/link";
 import Icon from "../Icon/Icon";
+import { HTMLProps } from "react";
 
-export default function AccountLink() {
+export default function AccountLink({
+  className,
+  href,
+}: LinkProps & HTMLProps<HTMLAnchorElement>) {
   return (
-    <Link href="/" className="flex items-center gap-4 link">
+    <Link
+      href={href}
+      className={`flex items-center gap-4 link ${className}`}
+      title="Войти в аккаунт"
+    >
       <span>Вход</span>
       <div className="w-[25px] h-[28px] relative rounded-[4px] bg-[#121212]">
         <Icon
