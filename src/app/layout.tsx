@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header/Header";
-import { DeviceProvider } from "@/shared/context/deviceContext";
 
 export const metadata: Metadata = {
   title: "Slider example",
@@ -16,10 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <DeviceProvider>
-          <Header />
-          {children}
-        </DeviceProvider>
+        <Header />
+        {children}
       </body>
     </html>
   );

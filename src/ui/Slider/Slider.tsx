@@ -1,14 +1,11 @@
 import React, {
   useState,
-  useEffect,
-  useRef,
-  RefObject,
   HTMLAttributes,
 } from "react";
 import Card from "@/ui/Card/Card";
 import { type Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import PaginationBar from "@/ui/Pagination/Pagination";
 
 import "swiper/css";
@@ -47,10 +44,10 @@ export default function Slider({ cards, className, ...rest }: TSliderProps) {
             if (swiper) setActive(swiper.activeIndex);
           }}
           className="w-full"
-          // autoplay={{
-          //   delay: 5000,
-          //   pauseOnMouseEnter: true,
-          // }}
+          autoplay={{
+            delay: 5000,
+            pauseOnMouseEnter: true,
+          }}
           breakpoints={{
             1700: {
               slidesPerView: 4,
@@ -65,7 +62,7 @@ export default function Slider({ cards, className, ...rest }: TSliderProps) {
         >
           {cards.map((card) => (
             <SwiperSlide key={card.id}>
-              <Card ico={card.ico} title={card.title} text={card.text} />
+              <Card ico={card.ico} title={card.title} text={card.text} href={card.href} />
             </SwiperSlide>
           ))}
         </Swiper>

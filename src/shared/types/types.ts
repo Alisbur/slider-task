@@ -9,13 +9,13 @@ export type TCard = {
   ico: TIcon;
   title: string;
   text: string;
-  href?: string;
+  href: string;
 }
 
 export type TMenuItem = {
   id: number;
   text: string;
-  path: string;
+  href: string;
 };
 
 export type TCompany = {
