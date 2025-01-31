@@ -6,8 +6,6 @@ type TPaginationProps = {
   onPaginationClick: (i: number) => void;
 } & HTMLAttributes<HTMLDivElement>;
 
-const activeThumbAfterStyles = "";
-
 export default function PaginationBar({
   qty,
   active,
